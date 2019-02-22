@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5p [%t][%c] %m%n" />
+        </Console>
+
+        <File name="file" fileName="/int_sd/log/dailylog.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5p [%t][%c] %m%n" />
+        </File>
+    </Appenders>
+
+
+
+    <Loggers>
+        <Logger name="egovLogger" level="DEBUG" additivity="false">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="file"/>
+        </Logger>
+
+        <Root level="DEBUG">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="file" />
+        </Root>
+
+    </Loggers>
+</Configuration>
